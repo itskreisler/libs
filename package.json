@@ -1,0 +1,64 @@
+{
+  "name": "@kreisler/ttlcache",
+  "version": "1.0.0",
+  "description": "Time-to-live cache utility library",
+  "keywords": [
+    "ttl",
+    "cache",
+    "typescript",
+    "node"
+  ],
+  "author": "Kreisler Ramirez Sierra",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itskreisler/libs.git",
+    "directory": "packages/ttlcache"
+  },
+  "homepage": "https://github.com/itskreisler/libs/tree/main/packages/ttlcache#readme",
+  "bugs": {
+    "url": "https://github.com/itskreisler/libs/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup --entry.index src/index.ts --format esm,cjs --dts --clean",
+    "prepare": "npm run build",
+    "watch": "tsup --entry.index src/index.ts --format esm --clean --watch",
+    "test:spec": "cross-env NODE_ENV=test tsx --test test/test.spec.ts",
+    "lint": "eslint src test",
+    "release:github": "node ./scripts/release-github.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@types/node": "latest",
+    "cross-env": "latest",
+    "eslint": "latest",
+    "nodemon": "latest",
+    "ts-node": "latest",
+    "tsup": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest"
+  }
+}
