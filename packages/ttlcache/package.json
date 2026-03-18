@@ -45,8 +45,7 @@
     "watch": "tsup --entry.index src/index.ts --format esm --clean --watch",
     "test:spec": "cross-env NODE_ENV=test tsx --test test/test.spec.ts",
     "lint": "eslint src test",
-    "prepublishOnly": "npm run lint && npm run test:spec && npm run build",
-    "publish": "npm publish --access public"
+    "prepublishOnly": "npm run lint && npm run test:spec && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
