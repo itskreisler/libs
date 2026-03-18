@@ -1,7 +1,7 @@
 {
-  "name": "my-project",
+  "name": "@kreisler/ttlcache",
   "version": "1.0.0",
-  "description": "",
+  "description": "Time-to-live cache utility library",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -10,14 +10,11 @@
     "dist/**"
   ],
   "scripts": {
-    "start": "tsx src/index.ts",
-    "xtart": "npx -y tsx src/index.ts",
-    "watch": "tsup --entry.index src/index.ts --format esm --clean --watch --onSuccess \"node dist/index.js\"",
     "build": "tsup --entry.index src/index.ts --format esm,cjs --dts --clean",
-    "test:esm": "tsup --entry.test src/index.ts --format esm --clean --onSuccess \"node dist/test.js\"",
-    "test:spec": "tsup test/test.spec.ts --format esm --clean --onSuccess \"cross-env NODE_ENV=test node --test dist/test.spec.js\"",
-    "test:tsx": "tsx test/test.spec.ts",
-    "publicar": "npm publish --access public"
+    "watch": "tsup --entry.index src/index.ts --format esm --clean --watch",
+    "test:spec": "cross-env NODE_ENV=test tsx --test test/test.spec.ts",
+    "lint": "eslint src test",
+    "publish": "npm publish --access public"
   },
   "keywords": [],
   "author": "",

@@ -3,18 +3,20 @@
   "display": "Default",
   "compilerOptions": {
     "target": "ES2024",
-    "module": "ES2022",
+    "module": "NodeNext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
+    "types": [
+      "node"
+    ],
     "resolveJsonModule": true,
     "noUnusedLocals": false,
     "noImplicitThis": false,
     "noUnusedParameters": false,
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"

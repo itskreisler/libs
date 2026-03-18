@@ -1,17 +1,18 @@
 {
   "name": "@kreisler/libs",
   "version": "1.0.0",
-  "description": "workspaces for kreisler's libs",
+  "description": "Monorepo: Node.js libraries in packages/, web projects in examples/",
   "funding": {
     "type": "buymeacoffee",
     "url": "https://www.buymeacoffee.com/kreisler"
   },
   "scripts": {
-    "test": "pnpm --filter './packages/debounce' run test:mjs",
-    "test2": "pnpm install pkg -D -w",
-    "lint": "next lint",
-    "test3": "npm install -g npm@latest",
-    "p": "pnpm add -g pnpm"
+    "build:libs": "pnpm --filter \"./packages/**\" run build",
+    "build:examples": "pnpm --filter \"./examples/**\" run build",
+    "build": "pnpm run build:libs && pnpm run build:examples",
+    "test": "pnpm --filter \"./packages/**\" run test:spec",
+    "lint": "pnpm --filter \"./packages/**\" run lint",
+    "dev": "pnpm --filter \"./examples/**\" run dev"
   },
   "repository": {
     "type": "git",
@@ -36,16 +37,19 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^10.0.1",
     "@types/assert": "^1.5.10",
     "@types/node": "^22.5.0",
     "assert": "^2.1.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.26.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.0.3",
     "test": "^3.3.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
-  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+  "dependencies": {
+    "typescript-eslint": "latest"
+  }
 }
