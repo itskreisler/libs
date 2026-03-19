@@ -42,11 +42,9 @@
   },
   "scripts": {
     "build": "tsup --entry.index src/index.ts --format esm,cjs --dts --clean",
-    "prepare": "npm run build",
     "watch": "tsup --entry.index src/index.ts --format esm --clean --watch",
     "test:spec": "cross-env NODE_ENV=test tsx --test test/test.spec.ts",
-    "lint": "eslint src test",
-    "prepublishOnly": "npm run lint && npm run test:spec && npm run build"
+    "lint": "eslint src test"
   },
   "dependencies": {},
   "devDependencies": {
